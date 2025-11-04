@@ -1,0 +1,22 @@
+.clase-navbar{
+    background-color: chocolate;
+   padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.a-navbar{
+    text-decoration: none;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.imagen-logo-tienda{
+    width: 8rem;
+}
+
+.img-carrito{
+    width: 5rem;
+}
+
