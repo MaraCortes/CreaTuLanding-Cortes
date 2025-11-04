@@ -1,22 +1,35 @@
-.clase-navbar{
-    background-color: chocolate;
-   padding: 3rem;
+.clase-navbar {
+    background-color: rgb(192, 95, 176);
+    padding: auto;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
 }
 
-.a-navbar{
+.a-navbar {
     text-decoration: none;
     cursor: pointer;
-    color: aliceblue;
+    color: rgb(70, 18, 70);
+    font-size: 1.2rem;
+    font-weight: 700;
+
 }
 
-.imagen-logo-tienda{
-    width: 8rem;
+
+
+.imagen-logo-tienda {
+    width: 10rem;
+    margin: 10px 20px;
+
 }
 
-.img-carrito{
-    width: 5rem;
+.img-carrito {
+    width: 3rem;
+    margin: 50px 30px;
 }
 
+h1 {        
+    text-align: center;
+    margin-top: 40px;
+
+}
