@@ -4,7 +4,7 @@ const productos = [
     description: 'comodo',
     price: 235.000,
     category: 'sillones',
-    img:'./public/img/pavlova.jpg',
+    img:'/img/pavlova.jpg',
     stock: 20
     },
 
@@ -13,7 +13,7 @@ const productos = [
     description: 'Para dormir',
     price: 235.000,
     category: 'sillones',
-    img:'./public/img/marquise.jpg',
+    img:'/img/marquise.jpg',
     stock: 20
     },
 
@@ -22,7 +22,7 @@ const productos = [
     description: 'Para ver tele',
     price: 235.000,
     category: 'sillones',
-    img:'./public/img/cheeseCakeFrutos Rojos.jpg',
+    img:'/img/cheeseCakeFrutos Rojos.jpg',
     stock: 20
     },
 
@@ -31,7 +31,7 @@ const productos = [
     description: '',
     price: 235.000,
     category: 'sillones',
-    img:'./public/img/LemonPie.jpg',
+    img:'/img/LemonPie.jpg',
     stock: 20
     }
 
