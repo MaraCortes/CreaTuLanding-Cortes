@@ -2,6 +2,7 @@
 import Navbar from './Componentes/Navbar'
 import ItemListContainer from "./Componentes/ItemListContainer"
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
  
