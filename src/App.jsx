@@ -1,17 +1,26 @@
 
 import MyNavbar from './Componentes/MyNavbar'
-import ItemListContainer from "./Componentes/ItemListContainer"
+import ItemListContainer from './Componentes/ItemListContainer'
+import ItemDetailContainer from './Componentes/ItemDetailContainer'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PagError from './Componentes/PagError'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
  
 
-  return (
-    <>
+  return (    
+    <BrowserRouter>
       <MyNavbar/>
-      <ItemListContainer mensaje="Bienvenidos al mundo que amamos!!"/>
-    </>
+      <Routes>
+        <Route path='/' element ={<ItemListContainer mensaje={'Bienvenidos al lugar que amamos!!'}/>}/>
+        <Route path='/Item/:id' element ={<ItemDetailContainer/> }/>  
+             
+        <Route path='*' element ={<PagError/> }/>       
+      </Routes>      
+    </BrowserRouter>
+    
   )
 }
 
