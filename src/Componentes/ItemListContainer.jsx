@@ -22,12 +22,9 @@ const ItemListContainer = ({mensaje})=> {
 
     return(
         <div>
-            <h1>{mensaje}</h1>
-            {/* {data.map((prod)=> <p key = {prod.id}>{prod.id}</p> )} */}
-            <ItemList data= {data} />
-        </div>
-
-        // <ItemDetail detalle={detalleProd}/>>
+            <h1>{mensaje}</h1>  
+             <ItemList data={data}/>          
+        </div>       
     )
 }
 
