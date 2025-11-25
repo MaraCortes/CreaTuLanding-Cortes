@@ -21,7 +21,7 @@ function MyNavbar() {
             <NavDropdown title="Productos" id="basic-nav-dropdown">
                <NavDropdown.Item as={NavLink} to='/category/tortas'>Tortas</NavDropdown.Item>              
               <NavDropdown.Item as={NavLink} to='/category/postres'>Postres</NavDropdown.Item> 
-              <NavDropdown.Item as={NavLink} to='/category/promociones'>Promociones</NavDropdown.Item>           
+              <NavDropdown.Item as={NavLink} to='/category/tartas'>Tartas</NavDropdown.Item>           
             </NavDropdown>
           </Nav>
           <CartWidget/>

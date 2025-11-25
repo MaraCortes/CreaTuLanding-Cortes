@@ -15,8 +15,10 @@ function App() {
       <MyNavbar/>
       <Routes>
         <Route path='/' element ={<ItemListContainer mensaje={'Bienvenidos al lugar que amamos!!'}/>}/>
-        <Route path='/Item/:id' element ={<ItemDetailContainer/> }/>  
-             
+        <Route path='/category/:categoryType' element ={<ItemListContainer mensaje={'Nueva Categoria de Productos'}  />}/>
+        
+
+        <Route path='/Item/:id' element ={<ItemDetailContainer/> }/>               
         <Route path='*' element ={<PagError/> }/>       
       </Routes>      
     </BrowserRouter>

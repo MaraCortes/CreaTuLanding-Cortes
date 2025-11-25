@@ -2,23 +2,34 @@
 import { useEffect, useState } from "react"
 import {traerProductos} from "../mock/Asyncmock"
 import ItemList from "./ItemList"
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({mensaje})=> {
     const[data, setData] = useState([])
+    const {categoryType}= useParams()
 
     useEffect(()=>{
         traerProductos()
-        .then((res)=> setData(res))
-    }, [])
+        .then((res)=> {
+            if(categoryType){
+                setData(res.filter((prod) => prod.category === categoryType))
+            }else{
+                setData(res)
+            }
+        })          
+            
+    }, [categoryType])
 
-    console.log('Soy ItemListContainer', data)
     return(
         <div>
             <h1>{mensaje}</h1>
             {/* {data.map((prod)=> <p key = {prod.id}>{prod.id}</p> )} */}
             <ItemList data= {data} />
         </div>
+
+        // <ItemDetail detalle={detalleProd}/>>
     )
 }
+
 
 export default ItemListContainer

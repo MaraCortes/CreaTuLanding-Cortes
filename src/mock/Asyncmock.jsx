@@ -3,7 +3,7 @@ const productos = [
     name: 'Pavlova',
     description: 'comodo',
     price: 235.000,
-    category: 'sillones',
+    category: 'tartas',
     img:'/img/pavlova.jpg',
     stock: 20
     },
@@ -12,7 +12,7 @@ const productos = [
     name: 'Marquise',
     description: 'Para dormir',
     price: 235.000,
-    category: 'sillones',
+    category: 'tartas',
     img:'/img/marquise.jpg',
     stock: 20
     },
@@ -21,7 +21,7 @@ const productos = [
     name: 'Cheese Cake',
     description: 'Para ver tele',
     price: 235.000,
-    category: 'sillones',
+    category: 'postres',
     img:'/img/cheeseCakeFrutos Rojos.jpg',
     stock: 20
     },
@@ -30,7 +30,7 @@ const productos = [
     name: 'Lemon Pie',
     description: '',
     price: 235.000,
-    category: 'sillones',
+    category: 'tartas',
     img:'/img/LemonPie.jpg',
     stock: 20
     }
@@ -43,7 +43,7 @@ export const traerProductos = ()=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
            resolve(productos)            
-        },3000)
+        },2000)
     })
 }
 
@@ -73,3 +73,13 @@ export const traerProductos = ()=>{
 //         },3000)
 //     })
 // }
+
+export const  traerUnProducto = (id)=>{
+    console.log({id:id})
+    return new Promise ((resolve)=>{
+        setTimeout(()=>{            
+            let producto= productos.find((item)=> item.id === id)
+            resolve(producto)
+        },2000)
+    })
+}
