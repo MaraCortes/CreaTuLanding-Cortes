@@ -52,21 +52,21 @@ const productos = [
 
     {
         id: '06',
-        name: 'Torta de Cumple',
-        description: 'tarta de masa dulce, crema chantilly, frutillas y espejo de gelatina',
+        name: 'Torta Cumple',
+        description: 'Torta de masa de vainilla, crema, mousse de vainilla, dulce de leche',
         price: 60.000,
         category: 'tortas',
-        img: '/img/Torta de cumple.webp',
+        img: '/img/Torta Cumple.webp',
         stock: 5
     },
 
     {
         id: '07',
-        name: 'Torta Selva Negra',
-        description: 'Torta de bizcochuelo de chocolate, crema chantilly, cerezas, dulce de leche y trozos de chocolate',
+        name: 'Chesse Cake frutos rojos',
+        description: 'Base crocante de galletas y manteca, crema, queso, frutos rojos de estación',
         price: 75.000,
         category: 'tortas',
-        img: '/img/Torta Selva Negra.webp',
+        img: '/img/Torta Chesse Cake frutos rojos.webp',
         stock: 6
     },
 
