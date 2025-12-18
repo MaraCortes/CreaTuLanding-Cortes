@@ -28,16 +28,17 @@
 // export default App
 
 
-import NavBarBS from './components/NavBarBS';
-import ItemListContainer from './components/ItemListContainer'
+// import MyNavbar from './components/MyNavbar';
+import MyNavbar from './Componentes/MyNavbar'
+import ItemListContainer from './Componentes/ItemListContainer'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemDetailContainer from './Componentes/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Error from './components/Error';
+import Error from './Componentes/PagError';
 // para envolver vamos a utilizar al provider
 import { CartProvider } from './context/CartContext';
-import CartContainer from './components/CartContainer';
+import CartContainer from './Componentes/CartContainer';
 
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
   return (
     <BrowserRouter>
     <CartProvider>
-      <NavBarBS/>
+      <MyNavbar/>
       <Routes>
         <Route path='/' element={ <ItemListContainer mensaje={'Bienvenidos a mi App'}/>}/>
         <Route path='/category/:type' element={ <ItemListContainer mensaje={'Estas en la categoría: '}/>}/>
