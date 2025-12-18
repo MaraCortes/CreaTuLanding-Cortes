@@ -51,6 +51,7 @@ function App() {
         <Route path='/category/:type' element={ <ItemListContainer mensaje={'Estas en la categoría: '}/>}/>
         <Route path='/item/:id' element={<ItemDetailContainer/>}/>
         <Route path='/cart' element={<CartContainer/>}/>
+        <Route path='/checkout' element={<Checkout/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>
       </CartProvider>

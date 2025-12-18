@@ -1,16 +1,16 @@
-const productos = [
-    {
-        id: '01',
-        name: 'Postre Tiramisú',
-        description: 'Postre italiano con vainillas bañadas en café, queso crema',
-        price: 45000,
-        category: 'postres',
-        img: '/img/Tiramisu.webp',
-        stock: 20
-    },
+export const productos = [
+    // {
+    //     id: '01',
+    //     name: 'Postre Tiramisú',
+    //     description: 'Postre italiano con vainillas bañadas en café, queso crema',
+    //     price: 45000,
+    //     category: 'postres',
+    //     img: '/img/Tiramisu.webp',
+    //     stock: 20
+    // },
 
     {
-        id: '02',
+        // id: '02',
         name: 'Marquise',
         description: 'Base de brownie de chocolate, con dulce de leche y merengue',
         price: 65000,
@@ -20,7 +20,7 @@ const productos = [
     },
 
     {
-        id: '03',
+        // id: '03',
         name: 'Mini Rogel',
         description: 'Porción de torta de capas de masas secas, dulce de leche, merengue. 120 gr.',
         price: 15000,
@@ -30,7 +30,7 @@ const productos = [
     },
 
     {
-        id: '04',
+        // id: '04',
         name: 'Lemon Pie',
         description: 'base de masa quebrada, rellena de crema de limón, cubierta con merengu',
         price: 49000,
@@ -40,7 +40,7 @@ const productos = [
     },
 
     {
-        id: '05',
+        // id: '05',
         name: 'Tarta de Frutilla',
         description: 'tarta de masa dulce, crema chantilly, frutillas y espejo de gelatina',
         price: 65000,
@@ -51,7 +51,7 @@ const productos = [
 
 
     {
-        id: '06',
+        // id: '06',
         name: 'Torta Cumple',
         description: 'Torta de masa de vainilla, crema, mousse de vainilla, dulce de leche',
         price: 60000,
@@ -61,7 +61,7 @@ const productos = [
     },
 
     {
-        id: '07',
+        // id: '07',
         name: 'Chesse Cake frutos rojos',
         description: 'Base crocante de galletas y manteca, crema, queso, frutos rojos de estación',
         price: 75000,
@@ -71,7 +71,7 @@ const productos = [
     },
 
     {
-        id: '08',
+        // id: '08',
         name: 'Mousse de Chocolate',
         description: 'Postre con una base de brownie, cubierta con una crema suave y espumosa de chocolate y una capa de dulce de leche, finalizando con merengue en la parte superior',
         price: 45000,

@@ -103,6 +103,15 @@ const ItemListContainer = ({ mensaje }) => {
 //     </div>
 // }
 
+
+// SE BORRA
+
+const subirData = ()=>{
+    console.log('Subiendo data...')
+    const collSubir= collection(db, 'product-cakes')
+    productos.map((prod)=> addDoc (collSubir, prod))
+
+}
 return (
 
     <>
@@ -110,6 +119,9 @@ return (
             loading
                 ? <LoaderComponent text={type ? `Cargando categoria ${type}...` : 'Cargando Productos...'} />
                 : <div>
+
+                    {/* despues se borra */}
+                    <button onClick={subirData}>SUBIR DATA</button>
                     <h1 className='text-success'>{mensaje} {type && <span style={{ textTransform: 'capitalize', color: 'red' }}>{type}</span>}</h1>
                     {/* <Input/> */}
                     <ItemList data={data} />
