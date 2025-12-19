@@ -41,14 +41,14 @@ const isInCart = (id) =>{
 
 }
 
-// OPCIONAL 
+
 const itemCantidad = (id)=>{
     const itemCart = cart.find((product)=>product.id === id)
 
-    if(itemInCar){
-        return itemInCar.cantidad
+    if(itemCart){
+        return itemCart.cantidad
     }else{
-        // no existe
+        
         return 0
     }
 }
@@ -57,8 +57,12 @@ const itemCantidad = (id)=>{
 
 
 
+const total = () => {
+    return cart.reduce((acc, product) => acc + (product.price * product.cantidad), 0)
+}
+
     return (
-        <CartContext.Provider> value{{cart, clear, removeItem, addItem, itemCantidad}}
+        <CartContext.Provider value={{cart, clear, removeItem, addItem, itemCantidad, total}}>
             {children}
         </CartContext.Provider>
 

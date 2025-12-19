@@ -10,12 +10,14 @@
 .imagen-logo-tienda {
     width: 10rem;
     margin: 10px 20px;
+    border-radius: 30%;
 
 }
 
 .img-carrito {
     width: 3rem;
     margin: 50px 30px;
+    border-radius: 50%;
 }
 
 h1 {

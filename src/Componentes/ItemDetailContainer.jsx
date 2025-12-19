@@ -1,29 +1,3 @@
-
-
-// import React, { useEffect, useState } from 'react'
-// import ItemDetail from './ItemDetail'
-// import { traerUnProducto, traerProductos } from '../mock/Asyncmock'
-// import { useParams } from 'react-router-dom'
-
-// const ItemDetailContainer = () => {
-//   const [detalleProd, setDetalleProd] = useState({})
-//   const { id } = useParams()
-
-//   useEffect(() => {
-//     traerUnProducto(id)
-//       .then((res) => setDetalleProd(res))
-//       .catch((error) => setError("No pudimos cargar el producto. Intente nuevamente."))
-//   }, [id])
-
-
-//   return (
-//     <ItemDetail detalle={detalleProd} />
-//   )
-// }
-
-// export default ItemDetailContainer
-
-
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
 import { Link, useParams } from 'react-router-dom'
@@ -32,57 +6,53 @@ import {doc, getDoc} from 'firebase/firestore'
 import { db } from '../service/firebase'
 
 const ItemDetailContainer = () => {
- const [detalle, setDetalle]= useState({})
- const [cargando, setCargando] = useState(true)
- const [invalid, setInvalid] = useState(null)
-//  const param = useParams()
-//  console.log(param)
-const {id}= useParams()
-// console.log(id, 'id')
- //si hago una funcion a parte
+    const [detalle, setDetalle] = useState({})
+    const [cargando, setCargando] = useState(true)
+    const [invalid, setInvalid] = useState(null)
+    const {id} = useParams()
 
-useEffect(()=>{
-      //1.crear una referencia
-      const docRef= doc(db, "items", id)
-      //2. traemos el doc
-      getDoc(docRef)
-      .then((res)=> {
-        if(res.data()){
-          setDetalle({id:res.id, ...res.data()})
-        }else{
-          setInvalid(true)
-        }
-      })
-      .catch((error)=>console.log(error))
-      .finally(()=> setCargando(false))
-    },[])
+    useEffect(() => {
+        const traerProducto = async () => {
+            try {
+                setCargando(true);
+                setInvalid(false);
+                
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                const docRef = doc(db, "product-cakes", id);
+                const res = await getDoc(docRef);
+                
+                if(res.exists() && res.data()){
+                    setDetalle({id: res.id, ...res.data()});
+                } else {
+                    setInvalid(true);
+                }
+            } catch (error) {
+                console.error('Error al obtener producto:', error);
+                setInvalid(true);
+            } finally {
+                setCargando(false);
+            }
+        };
 
+        traerProducto();
+    }, [id]);
 
-
-
-//  useEffect(()=>{
-//     getOneProduct(id)
-//     .then((res)=> setDetalle(res))
-//     .catch((error)=> console.log(error))
-//     .finally(()=> setCargando(false))
-//  },[id]
-// )
-
- //reutilizando la funcion de ItemListContainer
-//  useEffect(()=>{
-//     getProducts()
-//     .then((res)=> setDetalle(res.find((item)=> item.id === id)))
-//     .catch((error)=> console.log(error))
-//  },[id])
-
-  return (
-    <>
-    {cargando 
-    ? <LoaderComponent text={'Cargando detalle de producto'}/>
-    : <ItemDetail detalle={detalle}/>
+    if (cargando) {
+        return <LoaderComponent text={'Cargando detalle de producto'}/>
     }
-    </>
-  )
+
+    if (invalid || !detalle || !detalle.id) {
+        return (
+            <div className="text-center p-5">
+                <h2>Producto no encontrado</h2>
+                <p>El producto que buscas no existe o fue eliminado.</p>
+                <Link to="/" className="btn btn-primary">Volver al inicio</Link>
+            </div>
+        )
+    }
+
+    return <ItemDetail detalle={detalle}/>
 }
 
 export default ItemDetailContainer
