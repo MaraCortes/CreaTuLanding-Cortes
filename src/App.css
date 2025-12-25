@@ -1,5 +1,5 @@
 .clase-navbar {
-    background-color: rgb(192, 95, 176);
+    background-color: rgb(243, 181, 233);
     padding: auto;
     display: flex;
     justify-content: space-between;
@@ -20,10 +20,26 @@
     border-radius: 50%;
 }
 
-h1 {
-    text-align: center;
-    margin-top: 40px;
 
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #6b3e2e; 
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+
+h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background-color: #d8a48f; 
+  margin: 12px auto 0;
+  border-radius: 10px;
 }
 
 .divItemList {
