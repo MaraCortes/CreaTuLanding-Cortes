@@ -42,63 +42,58 @@ h1::after {
   border-radius: 10px;
 }
 
-.divItemList {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.estiloCard {
+  border-radius: 18px;
+  margin: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.item-detail-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.estiloCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
-.item-detail-container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #333;
+
+.link-img {
+  text-decoration: none;
+  display: block;
 }
 
-.item-detail-container img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-bottom: 20px;
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
-.item-detail-container p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 10px;
+
+.img-producto {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.item-price {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #007bff;
+
+.estiloCard:hover .img-producto {
+  transform: scale(1.08);
 }
 
-.item-stock {
-    font-weight: bold;
-    color: #28a745;
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(230, 122, 158, 0.75);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.error-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
+
+.img-wrapper:hover .overlay {
+  opacity: 1;
 }
