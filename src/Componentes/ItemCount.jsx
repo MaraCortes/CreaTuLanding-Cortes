@@ -88,7 +88,7 @@ const ItemCount = ({stock, onAdd}) => {
                             Agregar al Carrito
                         </button>
                     </div>
-                    : <p className="text-danger">Lo sentimos, por el momento no hay unidades disponibles 😭</p>
+                    : <p className="text-danger">Lo sentimos, por el momento no hay unidades disponibles</p>
             }
         </>
     )
